@@ -22,7 +22,7 @@ namespace LeetCode
             WatchGlobal = Stopwatch.StartNew();
             WatchDebug = Stopwatch.StartNew();
 
-            var a = FindSubstring("abababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababababab", new string[] { "ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba","ab","ba" });
+            var a = FindSubstring("wordgoodgoodgoodbestword", new string[] { "word", "good", "best", "good" });
 
             WatchGlobal.Stop();
             var elapsedMs = WatchGlobal.ElapsedMilliseconds;
@@ -33,12 +33,12 @@ namespace LeetCode
         class MatchObject
         {
             public List<int> MatchedIndexes { get; set; }
-            public bool IsMatched { get; set; }
+            public int Remaining { get; set; }
             public string Word { get; set; }
 
             public bool IsMatching(int index)
             {
-                return !IsMatched && MatchedIndexes.Contains(index);
+                return Remaining > 0 && MatchedIndexes.Contains(index);
             }
 
             public static MatchObject Clone(MatchObject obj)
@@ -46,7 +46,8 @@ namespace LeetCode
                 MatchObject clone = new MatchObject()
                 {
                     MatchedIndexes = obj.MatchedIndexes,
-                    Word = obj.Word
+                    Word = obj.Word,
+                    Remaining = obj.Remaining,
                 };
 
                 return clone;
@@ -62,13 +63,19 @@ namespace LeetCode
             Words = words;
             WordLen = words[0].Length;
 
-            List<MatchObject> objects = GetMatches(s);
+            GetMatches(s);
+
+            //WatchGlobal.Stop();
+            //var elapsedMs = WatchGlobal.ElapsedMilliseconds;
+
+            List<MatchObject> objects = GetMatches(s).Select(x => x.Value).ToList();
 
             int wordsLettersCount = WordLen * Words.Length;
             int max = s.Length - wordsLettersCount + 1;
 
             Dictionary<string, IndexTwin> indexTwins = GetDistinctIndexes(s, wordsLettersCount);
 
+            //foreach (var indexTwin in indexTwins)
             Parallel.ForEach(indexTwins, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount }, indexTwin =>
             {
                 int i = indexTwin.Value.Index;
@@ -81,21 +88,10 @@ namespace LeetCode
                 {
                     toReturn.Add(i);
                 }
-            });
+            }
+            );
 
             AddTwins(toReturn, indexTwins);
-
-            //foreach (int i in distinctIndexes)
-            //{
-            //    List<MatchObject> clonedObjects = Clone(objects);
-
-            //    string testingString = s.Substring(i, wordsLettersCount);
-
-            //    if (Match(clonedObjects, i, count: 0))
-            //    {
-            //        toReturn.Add(i);
-            //    }
-            //}
 
             return toReturn;
         }
@@ -154,21 +150,13 @@ namespace LeetCode
             return clone;
         }
 
-        private void RefreshCompleted(List<MatchObject> matches)
-        {
-            foreach (MatchObject matchObject in matches)
-            {
-                matchObject.IsMatched = false;
-            }
-        }
-
         private bool Match(List<MatchObject> matches, int i, int count)
         {
             int wordIndex = matches.FindIndex(x => x.IsMatching(i));
 
             if (wordIndex != -1)
             {
-                matches[wordIndex].IsMatched = true;
+                matches[wordIndex].Remaining -= 1;
                 ++count;
             }
             else
@@ -176,7 +164,7 @@ namespace LeetCode
                 return false;
             }
 
-            if (count == matches.Count)
+            if (count == Words.Length)
             {
                 return true;
             }
@@ -196,34 +184,32 @@ namespace LeetCode
             return toReturn;
         }
 
-        private List<MatchObject> GetMatches(string s)
+        private Dictionary<string, MatchObject> GetMatches(string s)
         {
-            List<MatchObject> toReturn = new List<MatchObject>();
-
-            Dictionary<string, List<int>> dic = new Dictionary<string, List<int>>();
+            Dictionary<string, MatchObject> dic = new Dictionary<string, MatchObject>();
 
             for (int i = 0; i < Words.Length; i++)
             {
                 string word = Words[i];
 
-                MatchObject m = new MatchObject()
+                if (!dic.TryGetValue(word, out MatchObject theObj))
                 {
-                    Word = word,
-                };
+                    MatchObject m = new MatchObject()
+                    {
+                        Word = word,
+                        MatchedIndexes = AllIndexesOf(s, word),
+                        Remaining = 1,
+                    };
 
-                if (dic.TryGetValue(word, out List<int> matchedIndexes))
-                {
-                    m.MatchedIndexes = matchedIndexes;
+                    dic.Add(word, m);
                 }
                 else
                 {
-                    m.MatchedIndexes = AllIndexesOf(s, word);
-                    dic.Add(word, m.MatchedIndexes);
+                    theObj.Remaining++;
                 }
-
-                toReturn.Add(m);
             }
-            return toReturn;
+
+            return dic;
         }
 
         public List<int> AllIndexesOf(string str, string value)
