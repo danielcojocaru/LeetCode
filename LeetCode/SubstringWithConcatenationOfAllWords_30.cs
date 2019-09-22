@@ -10,10 +10,6 @@ namespace LeetCode
 {
     public class SubstringWithConcatenationOfAllWords_30
     {
-        //private string S;
-        private string[] Words;
-        private int WordLen;
-
         Stopwatch WatchGlobal;
         Stopwatch WatchDebug;
 
@@ -22,211 +18,99 @@ namespace LeetCode
             WatchGlobal = Stopwatch.StartNew();
             WatchDebug = Stopwatch.StartNew();
 
-            var a = FindSubstring("wordgoodgoodgoodbestword", new string[] { "word", "good", "best", "good" });
+            var a = FindSubstring("abababab", new string[] { "a", "b", "a" });
 
             WatchGlobal.Stop();
             var elapsedMs = WatchGlobal.ElapsedMilliseconds;
 
-            Console.WriteLine("Finish: " + elapsedMs);
-        }
-
-        class MatchObject
-        {
-            public List<int> MatchedIndexes { get; set; }
-            public int Remaining { get; set; }
-            public string Word { get; set; }
-
-            public bool IsMatching(int index)
-            {
-                return Remaining > 0 && MatchedIndexes.Contains(index);
-            }
-
-            public static MatchObject Clone(MatchObject obj)
-            {
-                MatchObject clone = new MatchObject()
-                {
-                    MatchedIndexes = obj.MatchedIndexes,
-                    Word = obj.Word,
-                    Remaining = obj.Remaining,
-                };
-
-                return clone;
-            }
+            //Console.WriteLine("Finish: " + elapsedMs);
         }
 
         public IList<int> FindSubstring(string s, string[] words)
         {
-            IList<int> toReturn = new List<int>();
-
-            if (words.Length == 0) return toReturn;
-
-            Words = words;
-            WordLen = words[0].Length;
-
-            GetMatches(s);
-
-            //WatchGlobal.Stop();
-            //var elapsedMs = WatchGlobal.ElapsedMilliseconds;
-
-            List<MatchObject> objects = GetMatches(s).Select(x => x.Value).ToList();
-
-            int wordsLettersCount = WordLen * Words.Length;
-            int max = s.Length - wordsLettersCount + 1;
-
-            Dictionary<string, IndexTwin> indexTwins = GetDistinctIndexes(s, wordsLettersCount);
-
-            //foreach (var indexTwin in indexTwins)
-            Parallel.ForEach(indexTwins, new ParallelOptions() { MaxDegreeOfParallelism = Environment.ProcessorCount }, indexTwin =>
+            var output = new List<int>();
+            var wordsLength = 0;
+            var wordLength = 0;
+            var dict = new Dictionary<string, int>();
+            for (int i = 0; i < words.Length; i++)
             {
-                int i = indexTwin.Value.Index;
-
-                List<MatchObject> clonedObjects = Clone(objects);
-
-                string testingString = s.Substring(i, wordsLettersCount);
-
-                if (Match(clonedObjects, i, count: 0))
+                if (!dict.ContainsKey(words[i]))
                 {
-                    toReturn.Add(i);
+                    dict.Add(words[i], 0);
                 }
-            }
-            );
-
-            AddTwins(toReturn, indexTwins);
-
-            return toReturn;
-        }
-
-        private void AddTwins(IList<int> goodIndexes, Dictionary<string, IndexTwin> indexTwins)
-        {
-            List<int> goodIndexesList = goodIndexes as List<int>;
-            List<int> newOnes = new List<int>();
-
-            foreach (int index in goodIndexes)
-            {
-                newOnes.AddRange(indexTwins.First(x => x.Value.Index == index).Value.Twins);
+                dict[words[i]]++;
+                wordLength = words[i].Length;
+                wordsLength += wordLength;
             }
 
-            goodIndexesList.AddRange(newOnes);
-        }
+            Dictionary<string, BoolSteps> found = new Dictionary<string, BoolSteps>();
 
-        class IndexTwin
-        {
-            public int Index { get; set; }
-            public List<int> Twins { get; set; } = new List<int>();
-        }
-
-        private Dictionary<string, IndexTwin> GetDistinctIndexes(string s, int wordsLettersCount)
-        {
-            Dictionary<string, IndexTwin> toReturn = new Dictionary<string, IndexTwin>();
-
-            int max = s.Length - wordsLettersCount + 1;
-
-            for (int i = 0; i < max; i++)
+            for (int i = 0; i < wordLength; i++)
             {
-                string currentString = s.Substring(i, wordsLettersCount);
-
-                if (!toReturn.TryGetValue(currentString, out IndexTwin indexTwin))
+                var index = i;
+                while (index + wordsLength <= s.Length)
                 {
-                    toReturn.Add(currentString, new IndexTwin() { Index = i });
-                }
-                else
-                {
-                    indexTwin.Twins.Add(i);
-                }
-            }
+                    var hashSet = new Dictionary<string, int>(dict);
+                    var endIndex = index + wordsLength;
+                    var hasNotFound = false;
 
-            return toReturn;
-        }
+                    string entire = s.Substring(index, wordsLength);
 
-        private List<MatchObject> Clone(List<MatchObject> matches)
-        {
-            List<MatchObject> clone = new List<MatchObject>();
-
-            foreach (MatchObject obj in matches)
-            {
-                clone.Add(MatchObject.Clone(obj));
-            }
-
-            return clone;
-        }
-
-        private bool Match(List<MatchObject> matches, int i, int count)
-        {
-            int wordIndex = matches.FindIndex(x => x.IsMatching(i));
-
-            if (wordIndex != -1)
-            {
-                matches[wordIndex].Remaining -= 1;
-                ++count;
-            }
-            else
-            {
-                return false;
-            }
-
-            if (count == Words.Length)
-            {
-                return true;
-            }
-            else
-            {
-                return Match(matches, i + WordLen, count);
-            }
-        }
-
-        private List<bool> CreateCompletedList()
-        {
-            List<bool> toReturn = new List<bool>();
-            for (int i = 0; i < Words.Length; i++)
-            {
-                toReturn.Add(false);
-            }
-            return toReturn;
-        }
-
-        private Dictionary<string, MatchObject> GetMatches(string s)
-        {
-            Dictionary<string, MatchObject> dic = new Dictionary<string, MatchObject>();
-
-            for (int i = 0; i < Words.Length; i++)
-            {
-                string word = Words[i];
-
-                if (!dic.TryGetValue(word, out MatchObject theObj))
-                {
-                    MatchObject m = new MatchObject()
+                    if (!found.TryGetValue(entire, out BoolSteps bs))
                     {
-                        Word = word,
-                        MatchedIndexes = AllIndexesOf(s, word),
-                        Remaining = 1,
-                    };
+                        while (endIndex > index)
+                        {
+                            var temp = s.Substring(endIndex - wordLength, wordLength);
+                            if (!hashSet.ContainsKey(temp) || hashSet[temp] <= 0)
+                            {
+                                hasNotFound = true;
+                                break;
+                            }
 
-                    dic.Add(word, m);
-                }
-                else
-                {
-                    theObj.Remaining++;
+                            hashSet[temp]--;
+                            endIndex -= wordLength;
+                        }
+
+                        int stepsFuther = endIndex - index;
+                        found.Add(entire, new BoolSteps(hasNotFound, stepsFuther));
+
+                        if (hasNotFound)
+                        {
+                            index += stepsFuther;
+                            continue;
+                        }
+
+                        output.Add(index);
+                        index += wordLength;
+                    }
+                    else
+                    {
+                        if (bs.HasNotFound)
+                        {
+                            index += bs.StepsFuther;
+                            continue;
+                        }
+
+                        output.Add(index);
+                        index += wordLength;
+                    }
                 }
             }
 
-            return dic;
+            return output;
         }
 
-        public List<int> AllIndexesOf(string str, string value)
+        class BoolSteps
         {
-            if (String.IsNullOrEmpty(value))
-                throw new ArgumentException("the string to find may not be empty", "value");
-            List<int> indexes = new List<int>();
-            //for (int index = 0; ; index += value.Length)
-            for (int index = 0; ; index++)
+            public BoolSteps(bool isFound, int stepsFuther)
             {
-                index = str.IndexOf(value, index);
-                if (index == -1)
-                {
-                    return indexes;
-                }
-                indexes.Add(index);
+                HasNotFound = isFound;
+                StepsFuther = stepsFuther;
             }
+
+            public bool HasNotFound { get; set; }
+            public int StepsFuther { get; set; }
         }
+
     }
 }
